@@ -4,9 +4,7 @@ networks:
   default:
     name: expense
 volumes:
-  mysql:
-    #external: true # if true, you need to create manually
-       # docker volume create myqsl
+  mysql: # docker volume create myqsl   
 services:
   mysql:
     image: mysql:v1.0
@@ -18,7 +16,7 @@ services:
     #   - MYSQL_PASSWORD=ExpenseApp@1
     #   - MYSQL_DATABASE=transactions
     volumes:
-       - mysql:/var/lib/mysql 
+      - mysql:/var/lib/mysql 
     #   target: /var/lib/mysql
     #   type: volume # -v volume-name:/path/in/container
   backend:
